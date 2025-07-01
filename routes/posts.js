@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-// Index (da aggiustare)
+//importiamo posts da data
 
+const posts = require("../data/posts.js");
+
+// Index
 router.get("/", (req, res) => {
   res.json(posts);
 });
