@@ -5,9 +5,16 @@ const router = express.Router();
 
 const posts = require("../data/posts.js");
 
-// Index
+// Index + bonus
 router.get("/", (req, res) => {
-  res.json(posts);
+  // res.json(posts);
+  let filterposts = posts;
+
+  if (req.query.tags) {
+    filterposts = posts.filter((post) => post.tags.includes(req.query.tags));
+  }
+
+  res.json(filterposts);
 });
 
 // Show + Bonus

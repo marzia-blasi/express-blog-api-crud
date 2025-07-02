@@ -40,8 +40,21 @@ const posts = [
     title: "Torta paesana",
     content: `La torta paesana è un dolce di origine lombarda e precisamente della Brianza, la zona compresa tra la provincia a nord di Milano e il lago di Lecco-Como. E' un dolce di origine contadina, dalle infinite varianti, ma realizzata principalmente con pane raffermo bagnato nel latte. E' infatti conosciuta anche come torta di pane o, in dialetto locale, “michelacc” ovvero mica e lac (pane e latte). A seconda dei gusti e delle disponibilità del momento, al pane ammollato ogni famiglia univa ingredienti diversi, chi l'uvetta o chi i pinoli ad esempio. Noi vi presentiamo la nostra versione con l'aggiunta di cacao e amaretti: perfetta da gustare per una merenda dal sapore rustico, la torta paesana è un perfetto dolce di recupero quando si ha del pane avanzato… ed è ancora più buona il giorno dopo!`,
     image: "/imgs/posts/torta_paesana.avif",
-    tags: ["Dolci", "Dolci al cioccolato", "Torte", "Ricette vegetariane", "Ricette al forno"],
+    tags: [
+      "Dolci",
+      "Dolci al cioccolato",
+      "Torte",
+      "Ricette vegetariane",
+      "Ricette al forno",
+    ],
   },
 ];
 
 module.exports = posts;
+
+/*
+    "title": "Palline di cocco",
+    "content": "Le palline cocco e cacao sono delle deliziose praline senza cottura, ideali per concludere un pranzo in compagnia di amici o per concedersi una coccola a merenda insieme a una tazza di tè caldo. Un dessert adatto anche a ospiti vegani, perché preparato senza burro, uova o derivati animali, pronto in pochissimi minuti con solo 4 ingredienti.",
+    "image" : "/imgs/posts/palline_cocco.avif",
+    "tags": ["Dolci", "Dolci al cioccolato", "Cioccolatini", "Ricette vegetariane", "Vegan"]
+*/
