@@ -45,7 +45,28 @@ router.get("/:id", (req, res) => {
 
 //Store
 router.post("/", (req, res) => {
-  res.send(`crea nuovo post`);
+  // res.send(`crea nuovo post`);
+  console.log(req.body);
+
+  //nuovo id che s'incrementa dopo quello già esistente
+  const newId = posts[posts.length - 1].id + 1;
+  //oggetto post
+  const newPost = {
+    id: newId,
+    title: req.body.title,
+    content: req.body.content,
+    image: req.body.image,
+    tags: req.body.tags,
+  };
+
+  //aggiunta a posts
+  posts.push(newPost);
+
+  console.log(posts);
+
+  // status + json
+  res.status(201);
+  res.json(newPost);
 });
 
 //Update

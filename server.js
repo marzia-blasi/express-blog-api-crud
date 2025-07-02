@@ -6,6 +6,9 @@ const postsRouter = require("./routes/posts.js");
 
 app.use(express.static("imgs"));
 
+//body-parser
+app.use(express.json());
+
 /*
 app.get("/", (req, res) => {
   res.send("Hello marzia");
