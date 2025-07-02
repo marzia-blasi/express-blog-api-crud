@@ -1,26 +1,30 @@
 const express = require("express");
 const router = express.Router();
 
-//importiamo posts da data
+//controllers
+const postControllers = require("../controllers/postController.js");
 
-//const posts = require("../data/posts.js");
+//importiamo posts da data
+const posts = require("../data/posts.js");
+
+//in base alla richiesta di percorso viene chiesto al controller di eseguire...
 
 // Index + bonus
-router.get("/");
+router.get("/", postControllers.index);
 
 // Show + Bonus
-router.get("/:id");
+router.get("/:id", postControllers.show);
 
 //Store
-router.post("/");
+router.post("/", postControllers.store);
 
 //Update
-router.put("/:id");
+router.put("/:id", postControllers.update);
 
 //Modify
-router.patch("/:id");
+router.patch("/:id", postControllers.modify);
 
 //Destroy + Bonus
-router.delete("/:id");
+router.delete("/:id", postControllers.destroy);
 
 module.exports = router;

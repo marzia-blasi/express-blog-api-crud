@@ -3,7 +3,7 @@
 const posts = require("../data/posts.js");
 
 // Index + bonus
-(req, res) => {
+const index = (req, res) => {
   // res.json(posts);
   let filterposts = posts;
 
@@ -15,7 +15,7 @@ const posts = require("../data/posts.js");
 };
 
 // Show + Bonus
-(req, res) => {
+const show = (req, res) => {
   console.log(req.params);
   //conversione id in numero
   const id = parseInt(req.params.id);
@@ -34,7 +34,7 @@ const posts = require("../data/posts.js");
 };
 
 //Store
-(req, res) => {
+const store = (req, res) => {
   console.log(req.body);
 
   //nuovo id che s'incrementa dopo quello già esistente
@@ -59,7 +59,7 @@ const posts = require("../data/posts.js");
 };
 
 //Update
-(req, res) => {
+const update = (req, res) => {
   //conversione id in numero
   const id = parseInt(req.params.id);
 
@@ -84,13 +84,13 @@ const posts = require("../data/posts.js");
 };
 
 //Modify
-(req, res) => {
+const modify = (req, res) => {
   const id = req.params.id;
   res.send(`mododifica parzialmente il post n ${id}`);
 };
 
 //Destroy + Bonus
-(req, res) => {
+const destroy = (req, res) => {
   //conversione id in numero
   const id = parseInt(req.params.id);
 
@@ -112,4 +112,13 @@ const posts = require("../data/posts.js");
 
   //status
   res.sendStatus(204);
+};
+
+module.exports = {
+  index,
+  show,
+  store,
+  update,
+  modify,
+  destroy,
 };
