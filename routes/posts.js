@@ -71,8 +71,32 @@ router.post("/", (req, res) => {
 
 //Update
 router.put("/:id", (req, res) => {
+  /*
   const id = req.params.id;
   res.send(`modifica tutto il post n ${id}`);
+  */
+
+  //conversione id in numero
+  const id = parseInt(req.params.id);
+
+  //ricerca dell'id (cicla dentro posts per restituirci il singolo elemento post)
+  const post = posts.find((posts) => posts.id === id);
+
+  if (!post) {
+    return res.json({
+      error: "Not Found",
+      message: "Post non trovato",
+    });
+  }
+
+  // parametro da aggiornare
+  (post.title = req.body.title),
+    (post.content = req.body.content),
+    (post.image = req.body.image),
+    (post.tags = req.body.tags),
+    console.log(posts);
+
+  res.json(post);
 });
 
 //Modify
