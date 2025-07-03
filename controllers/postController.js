@@ -86,6 +86,11 @@ const update = (req, res) => {
 //Modify
 const modify = (req, res) => {
   const id = req.params.id;
+
+  // controllo middleware "errorsHandler"
+
+  piangere();
+
   res.send(`mododifica parzialmente il post n ${id}`);
 };
 
