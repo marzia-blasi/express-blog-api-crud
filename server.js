@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const port = 3030;
 
+const errorsHandler = require("./middleware/errorsHandler.js");
+
+const notFound = require("./middleware/notFound.js");
+
 const postsRouter = require("./routes/posts.js");
 
 app.use(express.static("imgs"));
@@ -16,6 +20,10 @@ app.get("/", (req, res) => {
 */
 
 app.use("/posts", postsRouter);
+
+app.use(errorsHandler);
+
+app.use(notFound);
 
 app.listen(port, () => {
   console.log(`Example app listening on http://localhost${port}`);
